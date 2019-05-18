@@ -21,14 +21,9 @@ steps:
      checkLatest: true
 
 # publish app
-
-- task: DotNetCoreCLI@2
+- task: CmdLine@2
   inputs:
-    command: 'publish'
-    publishWebProjects: true
-    modifyOutputPath: false
-    feedsToUse: 'select'
-    versioningScheme: 'off'
+    script: 'dotnet publish -c Release'
     workingDirectory: 'ChillMap'
 
 - task: ArchiveFiles@2
