@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using ChillMapWeb.Entities;
+using Microsoft.Extensions.Configuration;
+using MongoDB.Bson;
+using MongoDB.Driver;
+
+namespace ChillMapWeb.Repository
+{
+    public class UserRepository : IRepository<User>
+    {
+        private readonly IMongoCollection<User> users;
+
+        public UserRepository(IConfiguration config)
+        {
+            var client = new MongoClient(config.GetConnectionString("HackathonDb"));
+            var database = client.GetDatabase("HackathonDb");
+            users = database.GetCollection<User>("Users");
+        }
+
+        public List<User> Get()
+        {
+            return users.Find(user => true).ToList();
+        }
+
+        public User GetById(string userId)
+        {
+            return users.Find<User>(book => book.Id == userId).FirstOrDefault();
+        }
+
+        public User Create(User user)
+        {
+            users.InsertOne(user);
+
+            return user;
+        }
+
+        public void Remove(User user)
+        {
+            users.DeleteOne(book => book.Id == user.Id);
+        }
+
+        public void Remove(string id)
+        {
+            users.DeleteOne(book => book.Id == id);
+        }
+    }
+}
