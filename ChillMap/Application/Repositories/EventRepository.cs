@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ChillMapWeb.Entities;
 using ChillMapWeb.Repositories;
@@ -20,7 +21,7 @@ namespace ChillMapWeb.Repository
         {
             return events.Find(event_ => true).ToList();
         }
-        public Event GetById(string id)
+        public Event GetById(Guid id)
         {
             return events.Find(event_ => event_.Id == id).FirstOrDefault();
         }
@@ -32,7 +33,7 @@ namespace ChillMapWeb.Repository
             return event_;
         }
 
-        public void Remove(string id)
+        public void Remove(Guid id)
         {
             events.DeleteOne(event_ => event_.Id == id);
         }

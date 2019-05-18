@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Application.Entities;
 using Microsoft.Extensions.Configuration;
@@ -21,12 +22,12 @@ namespace ChillMapWeb.Repositories
             return districts.Find(district => true).ToList();
         }
 
-        public DistrictEntity GetById(string id)
+        public DistrictEntity GetById(Guid id)
         {
             return districts.Find(district => district.Id == id).FirstOrDefault();
         }
 
-        public void Remove(string id)
+        public void Remove(Guid id)
         {
             districts.DeleteOne(district => district.Id == id);
         }

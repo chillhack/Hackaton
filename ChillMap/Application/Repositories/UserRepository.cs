@@ -24,7 +24,7 @@ namespace ChillMapWeb.Repository
             return users.Find(user => true).ToList();
         }
 
-        public User GetById(string userId)
+        public User GetById(Guid userId)
         {
             return users.Find<User>(book => book.Id == userId).FirstOrDefault();
         }
@@ -41,7 +41,7 @@ namespace ChillMapWeb.Repository
             users.DeleteOne(book => book.Id == user.Id);
         }
 
-        public void Remove(string id)
+        public void Remove(Guid id)
         {
             users.DeleteOne(book => book.Id == id);
         }

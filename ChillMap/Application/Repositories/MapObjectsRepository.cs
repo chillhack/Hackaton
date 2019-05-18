@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Application.Entities;
 
@@ -10,12 +11,12 @@ namespace ChillMapWeb.Repositories
             throw new System.NotImplementedException();
         }
 
-        public MapObjectEntity GetById(string id)
+        public MapObjectEntity GetById(Guid id)
         {
             throw new System.NotImplementedException();
         }
 
-        public void Remove(string id)
+        public void Remove(Guid id)
         {
             throw new System.NotImplementedException();
         }

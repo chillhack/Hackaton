@@ -7,8 +7,7 @@ namespace ChillMapWeb.Entities
     public class Event
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         // TODO: заменить string на Place
         [BsonElement]
         public string Name { get; set; }

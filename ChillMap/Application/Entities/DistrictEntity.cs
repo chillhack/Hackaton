@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ChillMapWeb.Repositories;
 using MongoDB.Bson;
@@ -7,7 +8,7 @@ namespace Application.Entities
 {
     public class DistrictEntity
     {
-        public DistrictEntity(string id, List<MapObjectEntity> mapObjects, string name)
+        public DistrictEntity(Guid id, List<MapObjectEntity> mapObjects, string name)
         {
             Id = id;
             MapObjects = mapObjects;
@@ -15,8 +16,7 @@ namespace Application.Entities
         }
 
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         [BsonElement]
         public List<MapObjectEntity> MapObjects { get; set; }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ChillMapWeb.Entities;
 using ChillMapWeb.Repositories;
@@ -21,7 +22,7 @@ namespace Application.Repositories
         {
             return places.Find(place => true).ToList();
         }
-        public Place GetById(string id)
+        public Place GetById(Guid id)
         {
             return places.Find(place => place.Id == id).FirstOrDefault();
         }
@@ -33,7 +34,7 @@ namespace Application.Repositories
             return place;
         }
 
-        public void Remove(string id)
+        public void Remove(Guid id)
         {
             places.DeleteOne(place => place.Id == id);
         }
