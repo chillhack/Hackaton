@@ -1,24 +1,38 @@
 using System;
+using System.Collections.Generic;
 using Application.Entities;
+using Application.Repositories;
 using ChillMapWeb.Entities;
+using ChillMapWeb.Repositories;
+using ChillMapWeb.Repository;
+using Microsoft.Extensions.Configuration;
+using MongoDB.Driver;
 
 namespace Application.API
 {
     public class Application
     {
-        public DistrictEntity GetDistrict(Guid districtId)
+        private readonly EventRepository eventRep;
+        private readonly DistrictRepository districtRep;
+        private readonly PlaceRepository placeRep;
+
+        public Application(IConfiguration config)
         {
-            throw new NotImplementedException();
+            var client = new MongoClient(config.GetConnectionString("HackathonDb"));
+            var database = client.GetDatabase("HackathonDb");
+
+            eventRep = new EventRepository(database);
+            districtRep = new DistrictRepository(database);
+            placeRep = new PlaceRepository(database);
         }
 
-        public Place GetPlace(Guid placeId)
-        {
-            throw new NotImplementedException();
-        }
+        public District GetDistrict(Guid districtId) => districtRep.GetById(districtId);
+
+        public Place GetPlace(Guid placeId) => placeRep.GetById(placeId);
 
         public Event GetEvent(Guid eventId)
         {
-            throw new NotImplementedException();
+            return eventRep.GetById(eventId);
         }
     }
 }

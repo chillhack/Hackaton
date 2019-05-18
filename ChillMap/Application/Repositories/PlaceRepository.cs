@@ -11,10 +11,8 @@ namespace Application.Repositories
     {
         private readonly IMongoCollection<Place> places;
 
-        public PlaceRepository(IConfiguration config)
+        public PlaceRepository(IMongoDatabase database)
         {
-            var client = new MongoClient(config.GetConnectionString("HackathonDb"));
-            var database = client.GetDatabase("HackathonDb");
             places = database.GetCollection<Place>("Places");
         }
 

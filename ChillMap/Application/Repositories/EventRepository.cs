@@ -11,10 +11,8 @@ namespace ChillMapWeb.Repository
     {
         private readonly IMongoCollection<Event> events;
 
-        public EventRepository(IConfiguration config)
+        public EventRepository(IMongoDatabase database)
         {
-            var client = new MongoClient(config.GetConnectionString("HackathonDb"));
-            var database = client.GetDatabase("HackathonDb");
             events = database.GetCollection<Event>("Events");
         }
         public List<Event> Get()

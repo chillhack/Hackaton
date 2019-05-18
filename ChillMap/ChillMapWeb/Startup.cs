@@ -8,6 +8,7 @@ using ChillMapWeb.Repositories;
 using Application.Entities;
 using AutoMapper;
 using ChillMapWeb.Controllers;
+using ChillMapWeb.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -46,8 +47,15 @@ namespace ChillMapWeb
             services.AddScoped<EventRepository>();
             services.AddScoped<DistrictRepository>();
             services.AddScoped<PlaceRepository>();
+            services.AddScoped<Application.API.Application>();
 
-            Mapper.Initialize(cfg=>cfg.CreateMap<DistrictEntity, DistrictDTO>());
+            Mapper.Initialize(cfg=>
+            {
+                cfg.CreateMap<District, DistrictDTO>();
+                cfg.CreateMap<Event, EventDTO>();
+                cfg.CreateMap<Place, PlaceDTO>();
+                cfg.CreateMap<Position, PositionDTO>();
+            });
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
 

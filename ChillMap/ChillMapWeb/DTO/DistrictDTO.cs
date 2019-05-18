@@ -5,13 +5,13 @@ namespace ChillMapWeb.Controllers
 {
     public class DistrictDTO
     {
-        public DistrictDTO(IEnumerable<MapObjectDTO> mapObjects, string name)
+        public DistrictDTO(IEnumerable<PlaceDTO> placeDtos, string name)
         {
-            MapObjects = mapObjects;
+            Places= placeDtos;
             Name = name;
         }
 
-        [JsonProperty("mapObjects")] public IEnumerable<MapObjectDTO> MapObjects { get; }
+        [JsonProperty("places")] public IEnumerable<PlaceDTO> Places{ get; }
         [JsonProperty("name")] public string Name { get; }
     }
 }

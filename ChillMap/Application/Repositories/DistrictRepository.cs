@@ -6,23 +6,21 @@ using MongoDB.Driver;
 
 namespace ChillMapWeb.Repositories
 {
-    public class DistrictRepository: IRepository<DistrictEntity>
+    public class DistrictRepository: IRepository<District>
     {
-        private readonly IMongoCollection<DistrictEntity> districts;
+        private readonly IMongoCollection<District> districts;
 
-        public DistrictRepository(IConfiguration config)
+        public DistrictRepository(IMongoDatabase database)
         {
-            var client = new MongoClient(config.GetConnectionString("HackathonDb"));
-            var database = client.GetDatabase("HackathonDb");
-            districts = database.GetCollection<DistrictEntity>("Districts");
+            districts = database.GetCollection<District>("Districts");
         }
 
-        public List<DistrictEntity> Get()
+        public List<District> Get()
         {
             return districts.Find(district => true).ToList();
         }
 
-        public DistrictEntity GetById(Guid id)
+        public District GetById(Guid id)
         {
             return districts.Find(district => district.Id == id).FirstOrDefault();
         }
@@ -32,12 +30,12 @@ namespace ChillMapWeb.Repositories
             districts.DeleteOne(district => district.Id == id);
         }
 
-        public void Remove(DistrictEntity elem)
+        public void Remove(District elem)
         {
             districts.DeleteOne(district => district.Id == elem.Id);
         }
 
-        public DistrictEntity Create(DistrictEntity elem)
+        public District Create(District elem)
         {
             districts.InsertOne(elem);
 
