@@ -3,6 +3,8 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Application.Repositories;
+using ChillMapWeb.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,6 +41,8 @@ namespace ChillMapWeb
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<UserRepository>();
             services.AddScoped<EventRepository>();
+            services.AddScoped<DistrictRepository>();
+            services.AddScoped<PlaceRepository>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
