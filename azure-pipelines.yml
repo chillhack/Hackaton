@@ -18,13 +18,33 @@ variables:
 
 
 steps:
-- task: NodeTool@0 
+- task: NodeTool@0
+  inputs:
+     checkLatest: true
+
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
     command: build
     projects: 'ChillMap/$(projectName)/**/*.csproj'
     arguments: '--configuration $(buildConfiguration)' 
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'ChillMap/ChillMapWeb/bin/Release/netcoreapp2.2/publish'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure для учащихся (8638d1c1-9212-4735-8da1-982278043db5)'
+    appType: 'webApp'
+    WebAppName: 'chillhackmap'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+
 
 # - task: DotNetCoreCLI@2
 #   inputs:
