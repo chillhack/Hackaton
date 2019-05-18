@@ -27,6 +27,8 @@ steps:
     command: publish
     projects: 'ChillMap/ChillMapWeb/ChillMapWeb.csproj'
     arguments: '--configuration Release' 
+    publishWebProjects: True
+    zipAfterPublish: True
 
 - task: ArchiveFiles@2
   inputs:
