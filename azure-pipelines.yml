@@ -7,28 +7,29 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-16.04'
-  #vmImage: 'vs2017-win2016'
+  #vmImage: 'Ubuntu-16.04'
+  vmImage: 'vs2019-win2019'
 
 variables:
   buildConfiguration: 'Release'
   projectName: 'ChillMapWeb'
   # testProjectName: 'Tests'
-  framework: netcoreapp2.2
-
 
 steps:
 - task: NodeTool@0
   inputs:
      checkLatest: true
 
+# publish app
+
 - task: DotNetCoreCLI@2
   inputs:
-    command: publish
-    arguments: '--configuration Release' 
-    publishWebProjects: False
-    projects: ''
-    zipAfterPublish: True
+    command: 'publish'
+    publishWebProjects: true
+    modifyOutputPath: false
+    feedsToUse: 'select'
+    versioningScheme: 'off'
+    workingDirectory: 'ChillMap'
 
 - task: ArchiveFiles@2
   inputs:
@@ -38,14 +39,13 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
 
-- task: AzureRmWebAppDeployment@4
+- task: AzureWebApp@1
   inputs:
-    ConnectionType: 'AzureRM'
     azureSubscription: 'Azure для учащихся (8638d1c1-9212-4735-8da1-982278043db5)'
     appType: 'webApp'
-    WebAppName: 'chillhackmap'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-
+    appName: 'chillhackmap'
+    package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    deploymentMethod: 'auto'
 
 # - task: DotNetCoreCLI@2
 #   inputs:
