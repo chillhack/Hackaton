@@ -1,0 +1,32 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  # vmImage: 'Ubuntu-16.04'
+  vmImage: 'vs2017-win2016'
+
+variables:
+  buildConfiguration: 'Release'
+  projectName: 'ChillMapWeb'
+  # testProjectName: 'Tests'
+  framework: netcoreapp2.2
+
+
+steps:
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: build
+    projects: 'ChillMap/$(projectName)/**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)' 
+
+# - task: DotNetCoreCLI@2
+#   inputs:
+#     command: test
+#     projects: 'ChillMap/$(projectName)/$(testProjectName)/**/*.csproj'
+#     arguments: '--configuration $(buildConfiguration)'
