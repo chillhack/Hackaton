@@ -1,9 +1,11 @@
+using ChillMapWeb.Repository;
 using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -35,6 +37,8 @@ namespace ChillMapWeb
                     options.SerializerSettings.DefaultValueHandling = DefaultValueHandling.Populate;
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddScoped<UserRepository>();
+            services.AddScoped<EventRepository>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
