@@ -25,9 +25,9 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: publish
-    projects: 'ChillMap/ChillMapWeb/ChillMapWeb.csproj'
     arguments: '--configuration Release' 
-    publishWebProjects: True
+    publishWebProjects: False
+    projects: ''
     zipAfterPublish: True
 
 - task: ArchiveFiles@2
