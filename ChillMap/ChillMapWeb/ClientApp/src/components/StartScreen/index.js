@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function StartScreen() {
     return (
-        <div>
+        <div className='start-screen'>
             <div className='row' style={{height: '70px'}}>
                 <div className='col-2'>
                     <div className='logo'>
@@ -15,7 +15,7 @@ export default function StartScreen() {
                     </div>
                 </div>
             </div>
-            <div className='row'>
+            <div className='row' style={{height: '130px'}}>
                 <div className='col-4'>
                     <div className='header'>
                         <h1>ChillMap</h1>

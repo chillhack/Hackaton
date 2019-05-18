@@ -1,15 +1,25 @@
 .main{
-    margin: 15px;
     height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-clip: border-box;
+    position: relative;
 }
 
+.backgroundImage {
+    position: absolute;
+    top: -10px;
+    left: -25px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
 
 .screen {
-    height: 500px;
+    height: 450px;
+    background: transparent;
+    margin: 10px;
 }
 
 

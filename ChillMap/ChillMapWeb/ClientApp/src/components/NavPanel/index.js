@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './style.css';
 import NavButton from "../NavButton";
+import info from './src/home.svg'
 
 class NavPanel extends Component{
 
@@ -19,6 +20,7 @@ class NavPanel extends Component{
                 <div key={i} className={className}>
                     <NavButton
                         isActive={this.state.activeIndex === i}
+                        image={info}
                         onClick={() => this.onClick(i)}
                     />
                 </div>

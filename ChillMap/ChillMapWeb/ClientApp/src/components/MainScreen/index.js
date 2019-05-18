@@ -3,6 +3,7 @@ import NavPanel from "../NavPanel";
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import StartScreen from "../StartScreen";
+import img from './first_screen_bg.svg';
 
 export default class MainScreen extends Component{
     constructor(props){
@@ -15,11 +16,16 @@ export default class MainScreen extends Component{
 
     render(){
         const screens = [<StartScreen/>];
+
+        let back =
+            this.state.activeScreen === 0 ? <img src={img} className='backgroundImage'/> : '';
+
         return(
             <div className='main'>
+                {back}
                 <div className='row'>
                     <div className='col-12'>
-                        <div className='screen'>
+                        <div className={'screen'}>
                             {screens[this.state.activeScreen]}
                         </div>
                     </div>
@@ -37,6 +43,7 @@ export default class MainScreen extends Component{
 
 
     onClick = (index) => {
+        console.log(index);
         this.setState({activeScreen: index});
     }
 }

@@ -6,9 +6,11 @@ export default class App extends Component {
 
     render () {
         return (
+            <div className='screen'>
                 <div className='container-fluid'>
                     <MainScreen />
                 </div>
+            </div>
         );
     }
 }
