@@ -23,12 +23,10 @@ steps:
      checkLatest: true
 
 - task: DotNetCoreCLI@2
-  displayName: Build
   inputs:
     command: publish
-    arguments: '-c Release'    
-    workingDirectory: 'ChillMap'
-    publishWebProjects: true
+    projects: 'ChillMap/ChillMapWeb.csproj'
+    arguments: '--configuration Release'
 
 - task: ArchiveFiles@2
   inputs:
