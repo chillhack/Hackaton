@@ -1,18 +1,21 @@
+using System;
 using Newtonsoft.Json;
 
 namespace ChillMapWeb.Controllers
 {
     public class MapObjectDTO
     {
-        public MapObjectDTO(string resourcePath, string xPercents, string yPercents)
+        public MapObjectDTO(string resourcePath, string name, Guid id, string position)
         {
             ResourcePath = resourcePath;
-            XPercents = xPercents;
-            YPercents = yPercents;
+            Name = name;
+            Id = id;
+            Position = position;
         }
 
         [JsonProperty("path")] public string ResourcePath { get; }
-        [JsonProperty("x")] public string XPercents { get; }
-        [JsonProperty("y")] public string YPercents { get; }
+        [JsonProperty("name")] public string Name { get; }
+        [JsonProperty("id")] public Guid Id { get; }
+        [JsonProperty("position")] public string Position { get; }
     }
 }
