@@ -1,34 +1,33 @@
 using System;
 using System.Collections.Generic;
+using Application.API;
 using Application.Repositories;
 using ChillMapWeb.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChillMapWeb.Controllers
 {
-    [Route("api/places")]
     [ApiController]
+    [Route("api/places")]
     public class PlacesController : ControllerBase
     {
-        private readonly PlaceRepository repo;
+        private readonly PlacesAPI api;
 
-        public PlacesController(PlaceRepository repo)
+        public PlacesController(PlacesAPI api)
         {
-            this.repo = repo;
+            this.api = api;
         }
 
-        [HttpGet]
+        [HttpGet("places")]
         public ActionResult<List<Place>> Get()
         {
-            return repo.Get();
+            return Ok(api.GetAllPlaces());
         }
 
-        [HttpPost]
-        public ActionResult<Place> Create(Place place)
+        [HttpGet("getPlace/{placeId}")]
+        public ActionResult<Place> GetPlace(string placeId)
         {
-            repo.Create(place);
-
-            return CreatedAtRoute("GetPlace", new { id = place.Id.ToString()}, place);
+            return Ok(api.GetPlace(placeId));
         }
     }
 }
