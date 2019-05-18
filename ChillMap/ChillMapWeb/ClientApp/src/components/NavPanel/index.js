@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import './style.css';
 import NavButton from "../NavButton";
-import info from './src/home.svg'
+import info from './src/info.svg'
+import home from './src/home.svg'
+import loc from './src/loc.svg'
+import serch from './src/serch.svg'
+import man from './src/man.svg'
 
 class NavPanel extends Component{
 
     constructor(props){
         super(props);
+        this.pic = [home, man,  serch, loc, info];
         this.state = {
             activeIndex: 0
         }
@@ -20,7 +25,7 @@ class NavPanel extends Component{
                 <div key={i} className={className}>
                     <NavButton
                         isActive={this.state.activeIndex === i}
-                        image={info}
+                        image={this.pic[i]}
                         onClick={() => this.onClick(i)}
                     />
                 </div>
