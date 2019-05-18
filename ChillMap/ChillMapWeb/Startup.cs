@@ -5,6 +5,9 @@ using System.Linq;
 using System.Reflection;
 using Application.Repositories;
 using ChillMapWeb.Repositories;
+using Application.Entities;
+using AutoMapper;
+using ChillMapWeb.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -44,6 +47,7 @@ namespace ChillMapWeb
             services.AddScoped<DistrictRepository>();
             services.AddScoped<PlaceRepository>();
 
+            Mapper.Initialize(cfg=>cfg.CreateMap<DistrictEntity, DistrictDTO>());
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
 
