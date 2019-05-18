@@ -34,14 +34,6 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
 
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Azure для учащихся (8638d1c1-9212-4735-8da1-982278043db5)'
-    appType: 'webApp'
-    appName: 'chillhackmap'
-    package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    deploymentMethod: 'auto'
-
 # - task: DotNetCoreCLI@2
 #   inputs:
 #     command: test
