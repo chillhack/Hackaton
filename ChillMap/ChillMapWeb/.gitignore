@@ -231,5 +231,5 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 
-*/bin/
-*/obj/
+bin/
+obj/
