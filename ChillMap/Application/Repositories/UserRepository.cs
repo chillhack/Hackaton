@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using ChillMapWeb.Entities;
+using ChillMapWeb.Repositories;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
