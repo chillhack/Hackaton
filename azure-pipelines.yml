@@ -26,8 +26,10 @@ steps:
   displayName: Build
   inputs:
     command: publish
-    projects: 'ChillMap/$(projectName)/**/*.csproj'
-    arguments: '--configuration $(buildConfiguration)' 
+    projects: '/$(projectName)/**/*.csproj'
+    arguments: '-c Release'    
+    workingDirectory: 'ChillMap'
+    publishWebProjects: true
 
 - task: ArchiveFiles@2
   inputs:
