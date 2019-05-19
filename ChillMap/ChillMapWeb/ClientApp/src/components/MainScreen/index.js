@@ -3,7 +3,8 @@ import NavPanel from "../NavPanel";
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import StartScreen from "../StartScreen";
-import img from './first_screen_bg.svg';
+import firstScreenBg from './first_screen_bg.svg';
+import other from './bg_others.svg';
 import ChillMap from "../ChillMap";
 import TopEventScreen from "../TopEventScreen";
 
@@ -22,7 +23,8 @@ export default class MainScreen extends Component {
         const screens = [<StartScreen/>, null, <TopEventScreen/>, <ChillMap/>, null];
 
         let back =
-            this.state.activeScreen === 0 ? <img alt='background' src={img} className='backgroundImage'/> : '';
+            this.state.activeScreen === 0 ? <img alt='background' src={firstScreenBg} className='backgroundImage'/> :
+                <img alt='background' src={other} className='backgroundImage'/>;
 
         return (
             <div className='main'>
