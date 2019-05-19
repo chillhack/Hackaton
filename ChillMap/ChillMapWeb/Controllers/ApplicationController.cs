@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Application.Entities;
 using AutoMapper;
+using ChillMapWeb.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChillMapWeb.Controllers
@@ -25,5 +28,11 @@ namespace ChillMapWeb.Controllers
 
         [HttpGet("event/{eventId}")]
         public ActionResult<EventDTO> GetEvent(string eventId) => Ok(Mapper.Map<EventDTO>(app.GetEvent(new Guid(eventId))));
+
+        [HttpGet("events")]
+        public ActionResult<List<EventDTO>> GetEvents()
+        {
+            return Ok(app.GetEvents().Select(Mapper.Map<Event, EventDTO>).ToList());
+        }
     }
 }
