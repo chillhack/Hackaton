@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ChillMapWeb.Entities;
 using ChillMapWeb.Repositories;
@@ -10,17 +11,15 @@ namespace ChillMapWeb.Repository
     {
         private readonly IMongoCollection<Event> events;
 
-        public EventRepository(IConfiguration config)
+        public EventRepository(IMongoDatabase database)
         {
-            var client = new MongoClient(config.GetConnectionString("HackathonDb"));
-            var database = client.GetDatabase("HackathonDb");
             events = database.GetCollection<Event>("Events");
         }
         public List<Event> Get()
         {
             return events.Find(event_ => true).ToList();
         }
-        public Event GetById(string id)
+        public Event GetById(Guid id)
         {
             return events.Find(event_ => event_.Id == id).FirstOrDefault();
         }
@@ -32,7 +31,7 @@ namespace ChillMapWeb.Repository
             return event_;
         }
 
-        public void Remove(string id)
+        public void Remove(Guid id)
         {
             events.DeleteOne(event_ => event_.Id == id);
         }

@@ -1,33 +1,45 @@
+using System;
 using System.Collections.Generic;
 using Application.Entities;
+using Microsoft.Extensions.Configuration;
+using MongoDB.Driver;
 
 namespace ChillMapWeb.Repositories
 {
-    public class DistrictRepository: IRepository<DistrictEntity>
+    public class DistrictRepository: IRepository<District>
     {
-        public List<DistrictEntity> Get()
+        private readonly IMongoCollection<District> districts;
+
+        public DistrictRepository(IMongoDatabase database)
         {
-            throw new System.NotImplementedException();
+            districts = database.GetCollection<District>("Districts");
         }
 
-        public DistrictEntity GetById(string id)
+        public List<District> Get()
         {
-            throw new System.NotImplementedException();
+            return districts.Find(district => true).ToList();
         }
 
-        public void Remove(string id)
+        public District GetById(Guid id)
         {
-            throw new System.NotImplementedException();
+            return districts.Find(district => district.Id == id).FirstOrDefault();
         }
 
-        public void Remove(DistrictEntity elem)
+        public void Remove(Guid id)
         {
-            throw new System.NotImplementedException();
+            districts.DeleteOne(district => district.Id == id);
         }
 
-        public DistrictEntity Create(DistrictEntity elem)
+        public void Remove(District elem)
         {
-            throw new System.NotImplementedException();
+            districts.DeleteOne(district => district.Id == elem.Id);
+        }
+
+        public District Create(District elem)
+        {
+            districts.InsertOne(elem);
+
+            return elem;
         }
     }
 }
