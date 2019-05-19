@@ -26,13 +26,13 @@ steps:
     script: 'dotnet publish -c Release'
     workingDirectory: 'ChillMap'
 
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: 'ChillMap/ChillMapWeb/bin/Release/netcoreapp2.2/publish'
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
+# - task: ArchiveFiles@2
+#   inputs:
+#     rootFolderOrFile: 'ChillMap/ChillMapWeb/bin/Release/netcoreapp2.2/publish'
+#     includeRootFolder: false
+#     archiveType: 'zip'
+#     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+#     replaceExistingArchive: true
 
 # - task: DotNetCoreCLI@2
 #   inputs:
