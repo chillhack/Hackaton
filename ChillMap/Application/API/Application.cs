@@ -17,11 +17,8 @@ namespace Application.API
         private readonly DistrictRepository districtRep;
         private readonly PlaceRepository placeRep;
 
-        public Application(IConfiguration config)
+        public Application(IMongoDatabase database)
         {
-            var client = new MongoClient(config.GetConnectionString("HackathonDb"));
-            var database = client.GetDatabase("HackathonDb");
-
             eventRep = new EventRepository(database);
             districtRep = new DistrictRepository(database);
             placeRep = new PlaceRepository(database);
