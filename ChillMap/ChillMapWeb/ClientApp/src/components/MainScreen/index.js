@@ -7,22 +7,24 @@ import img from './first_screen_bg.svg';
 import ChillMap from "../ChillMap";
 import TopEventScreen from "../TopEventScreen";
 
-export default class MainScreen extends Component{
-    constructor(props){
+export default class MainScreen extends Component {
+    constructor(props) {
         super(props);
 
         this.state = {
             activeScreen: 0,
+
         }
+        // this.onRegionClick = this.onRegionClick.bind(this)
     }
 
-    render(){
-        const screens = [<StartScreen/>, null, <TopEventScreen />, <ChillMap />, null];
+    render() {
+        const screens = [<StartScreen/>, null, <TopEventScreen/>, <ChillMap/>, null];
 
         let back =
             this.state.activeScreen === 0 ? <img alt='background' src={img} className='backgroundImage'/> : '';
 
-        return(
+        return (
             <div className='main'>
                 {back}
                 <div className='row'>
@@ -34,9 +36,9 @@ export default class MainScreen extends Component{
                 </div>
                 <div className='row align-items-end'>
                     <div className='col-6 offset-3'>
-                            <NavPanel
-                                clickHandler={ (i) => this.onClick(i) }
-                            />
+                        <NavPanel
+                            clickHandler={(i) => this.onClick(i)}
+                        />
                     </div>
                 </div>
             </div>
