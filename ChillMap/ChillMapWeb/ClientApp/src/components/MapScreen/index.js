@@ -1,42 +1,34 @@
-import React, {Component} from 'react';
-import NavPanel from "../NavPanel";
-import './style.css';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import StartScreen from "../StartScreen";
+import './style.css'
+import AnimatedText from "../AnimatedText";
 
-export default class MapScreen extends Component{
-    constructor(props){
-        super(props);
+export default function MapScreen() {
+    return (
+        <div className='start-screen'>
+            <div className='row' style={{height: '70px'}}>
+                <div className='col-2'>
+                    <div className='logo'>
 
-        this.state = {
-            activeScreen: 0,
-        }
-    }
-
-    render(){
-        const screens = [<StartScreen/>];
-        return(
-            <div className='main'>
-                <div className='row'>
-                    <div className='col-12'>
-                        <div className='screen'>
-                            {screens[this.state.activeScreen]}
-                        </div>
                     </div>
                 </div>
-                <div className='row align-items-end'>
-                    <div className='col-6 offset-3'>
-                            <NavPanel
-                                clickHandler={ (i) => this.onClick(i) }
-                            />
+                <div className='col-2 offset-8'>
+                    <div className='login'>
+
                     </div>
                 </div>
             </div>
-        );
-    }
-
-
-    onClick = (index) => {
-        this.setState({activeScreen: index});
-    }
+            <div className='row' style={{height: '130px'}}>
+                <div className='col-4'>
+                    <AnimatedText text={'ChillMap'}/>
+                </div>
+            </div>
+            <div className='row'>
+                <div className='col col-lg-6'>
+                    <div className='text-muted'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }

@@ -1,17 +1,12 @@
 import React from 'react';
 import './style.css'
 
-export default function NavButton({isActive, onClick}) {
+export default function NavButton({isActive, image, onClick}) {
 
-    const imgSrc = isActive ? '' : '';
     return(
         <div >
             <div className='nav-btn'>
-                <button
-                    onClick={onClick}
-                    className='btn'
-                    style={{backgroundImage: {imgSrc}}}
-                />
+                <button onClick={onClick} className='btn'><img className={'firstScreenBg'} src={image}/></button>
             </div>
         </div>
     );

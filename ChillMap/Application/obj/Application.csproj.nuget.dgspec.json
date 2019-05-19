@@ -1,0 +1,62 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Daria\\Desktop\\hackaton\\Hackaton\\ChillMap\\Application\\Application.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Daria\\Desktop\\hackaton\\Hackaton\\ChillMap\\Application\\Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Daria\\Desktop\\hackaton\\Hackaton\\ChillMap\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "C:\\Users\\Daria\\Desktop\\hackaton\\Hackaton\\ChillMap\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Daria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Daria\\Desktop\\hackaton\\Hackaton\\ChillMap\\Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Daria\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.9.0-beta1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.map-box{
+    margin-top: -15px;
+    margin-left: 10px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.back{
+    height: 100%;
+
+}
+
+.center-dist:active, .center-dist:hover, .center-dist:focus {
+    outline: transparent none 0 !important;
+    box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+}
