@@ -4,6 +4,8 @@ import './style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import StartScreen from "../StartScreen";
 import img from './first_screen_bg.svg';
+import ChillMap from "../ChillMap";
+import TopEventScreen from "../TopEventScreen";
 
 export default class MainScreen extends Component{
     constructor(props){
@@ -15,10 +17,10 @@ export default class MainScreen extends Component{
     }
 
     render(){
-        const screens = [<StartScreen/>];
+        const screens = [<StartScreen/>, null, <TopEventScreen />, <ChillMap />, null];
 
         let back =
-            this.state.activeScreen === 0 ? <img src={img} className='backgroundImage'/> : '';
+            this.state.activeScreen === 0 ? <img alt='background' src={img} className='backgroundImage'/> : '';
 
         return(
             <div className='main'>

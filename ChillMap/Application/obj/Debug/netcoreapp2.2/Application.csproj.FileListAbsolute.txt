@@ -1,0 +1,12 @@
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\bin\Debug\netcoreapp2.2\Application.deps.json
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\bin\Debug\netcoreapp2.2\Application.dll
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\bin\Debug\netcoreapp2.2\Application.pdb
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\obj\Debug\netcoreapp2.2\Application.csprojAssemblyReference.cache
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\obj\Debug\netcoreapp2.2\Application.csproj.CoreCompileInputs.cache
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\obj\Debug\netcoreapp2.2\Application.AssemblyInfoInputs.cache
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\obj\Debug\netcoreapp2.2\Application.AssemblyInfo.cs
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\obj\Debug\netcoreapp2.2\Application.csproj.CopyComplete
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\obj\Debug\netcoreapp2.2\Application.dll
+C:\Users\Daria\Desktop\hackaton\Hackaton\ChillMap\Application\obj\Debug\netcoreapp2.2\Application.pdb

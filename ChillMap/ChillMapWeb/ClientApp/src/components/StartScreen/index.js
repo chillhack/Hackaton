@@ -1,4 +1,7 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import './style.css'
+import AnimatedText from "../AnimatedText";
 
 export default function StartScreen() {
     return (
@@ -17,15 +20,12 @@ export default function StartScreen() {
             </div>
             <div className='row' style={{height: '130px'}}>
                 <div className='col-4'>
-                    <div className='header'>
-                        <h1>ChillMap</h1>
-                    </div>
+                    <AnimatedText text={'ChillMap'}/>
                 </div>
             </div>
             <div className='row'>
                 <div className='col col-lg-6'>
-                    <div className='description'>
-                        <p>Андерграундная карта</p>
+                    <div className='text-muted'>
                     </div>
                 </div>
             </div>
