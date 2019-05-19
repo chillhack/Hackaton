@@ -12,12 +12,12 @@ export default class EventCard extends Component{
 
     render() {
         let desc = this.state.isOpen && <p className='card-text'>{this.props.event.description}</p>;
-        console.log(this.props.events);
+        console.log(this.props.event);
         return (
             <div className='col-lg-8 offset-2'>
             <div className={'card'}>
                 <div className='card-body'>
-                    <img src={''} className='card-img-top'/>
+                    <img src={ this.props.event.path} className='card-img-top'/>
                     <p><h5 className={'card-title'}>{this.props.event.name}</h5>
                         <button className={'btn-more'} onClick={this.clickHandler}>More</button></p>
                     <p className='card-subtitle mb-2 text-muted'>{this.props.event.date}</p>

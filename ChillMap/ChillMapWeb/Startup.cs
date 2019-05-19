@@ -52,7 +52,7 @@ namespace ChillMapWeb
             Mapper.Initialize(cfg=>
             {
                 cfg.CreateMap<District, DistrictDTO>();
-                cfg.CreateMap<Event, EventDTO>();
+                cfg.CreateMap<EventDTO, Event>();
                 cfg.CreateMap<Place, PlaceDTO>();
                 cfg.CreateMap<Position, PositionDTO>();
             });
@@ -86,7 +86,7 @@ namespace ChillMapWeb
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+//            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 

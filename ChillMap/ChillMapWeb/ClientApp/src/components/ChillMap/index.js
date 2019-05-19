@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import './style.css';
-// import backImg from './ceil_map.svg';
 import mapimg from './ceil_map.svg';
-import goodMap from './goodMap.svg';
 import image1 from './maps/1.svg'
 import image2 from './maps/2.svg'
 import image3 from './maps/3.svg'
@@ -93,10 +91,11 @@ class ChillMap extends Component {
             <div className='row' style={{height: '100%'}}>
                 <div className='col-10 offset-1'>
                     <div className='back'>
-                        <div>
-                            <img className='map-box' src={mapimg} useMap={'#map'} z-index="-1"/>
-                            {/*<img className='map-box' src={this.selectImage()} useMap={'#map'}/>*/}
-                            {/*<BackImg/>*/}
+                        <div style={{"z-index": -2}}>
+                            <img className='map-box1' src={mapimg} useMap={'#map'} />
+                        </div>
+                        <div style={{"z-index": -1}}>
+                            <img className='map-box2' src={this.selectImage()} useMap={'#map'} />
                         </div>
                         <p>
                             <map name={'map'}>
@@ -107,32 +106,32 @@ class ChillMap extends Component {
                                       coords={'400,200,500,300'}/>
 
                                 <area onClick={this.onClick2}
-                                      className='left-dist'
+                                      className='center-dist'
                                       href='#'
                                       shape='rect'
                                       coords={'200,200,400,400'}/>
                                 <area onClick={this.onClick3}
-                                      className='left-dist'
+                                      className='center-dist'
                                       href='#'
                                       shape='rect'
                                       coords={'210,60,425,225'}/>
                                 <area onClick={this.onClick4}
-                                      className='left-dist'
+                                      className='center-dist'
                                       href='#'
                                       shape='rect'
                                       coords={'425,60,600,225'}/>
                                 <area onClick={this.onClick6}
-                                      className='left-dist'
+                                      className='center-dist'
                                       href='#'
                                       shape='rect'
                                       coords={'500,200,600,350'}/>
                                 <area onClick={this.onClick7}
-                                      className='left-dist'
+                                      className='center-dist'
                                       href='#'
                                       shape='rect'
                                       coords={'550,350,700,450'}/>
                                 <area onClick={this.onClick1}
-                                      className='left-dist'
+                                      className='center-dist'
                                       href='#'
                                       shape='rect'
                                       coords={'375,350,550,450'}/>

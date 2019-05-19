@@ -18,5 +18,8 @@ namespace ChillMapWeb.Entities
 
         [BsonDateTimeOptions(Kind=DateTimeKind.Local)]
         public DateTime Date { get; set; }
+
+        [BsonElement]
+        public string Path { get; }
     }
 }
