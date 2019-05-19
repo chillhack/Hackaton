@@ -13,8 +13,8 @@ namespace ASP.NETCoreWebApplication
     {
         public static IEnumerable<Item> GetAllEvents(string url)
         {
-            var request = (HttpWebRequest)WebRequest.Create(url); 
-            var response = (HttpWebResponse)request.GetResponse();
+            var request = (HttpWebRequest) WebRequest.Create(url);
+            var response = (HttpWebResponse) request.GetResponse();
 
             using (var reader = new StreamReader(response.GetResponseStream()))
             {
@@ -28,26 +28,29 @@ namespace ASP.NETCoreWebApplication
             var values = JsonConvert.DeserializeObject<Wtf>(json);
             return values.Response.Items;
         }
-        
+
         private static IEnumerable<Item> ParseJson2(string json)
         {
-            //Console.WriteLine(json);
+            Console.WriteLine(json);
             var values = JsonConvert.DeserializeObject<ResponseGovna>(json);
             return values.Response;
         }
 
-        public static void GetEventsDetails(string url)
+        public static IEnumerable<Item> GetEventsDetails(string url)
         {
-            var request = (HttpWebRequest)WebRequest.Create(url); 
-            var response = (HttpWebResponse)request.GetResponse();
+            var request = (HttpWebRequest) WebRequest.Create(url);
+            var response = (HttpWebResponse) request.GetResponse();
 
             using (var reader = new StreamReader(response.GetResponseStream()))
             {
                 var result = ParseJson2(reader.ReadToEnd());
                 foreach (var item in result)
                 {
-                    Console.WriteLine(item);
+                    Console.WriteLine(item.Place);
+                    Console.WriteLine(item.Name);
                 }
+
+                return result;
             }
         }
     }
@@ -78,7 +81,7 @@ namespace ASP.NETCoreWebApplication
 
         public override string ToString()
         {
-            return $"NAME: {Name}\n{string.Join("",Description.Split('\n').Select(l => $"\t{l}\n").ToArray())}";
+            return $"NAME: {Name}\n{string.Join("", Description.Split('\n').Select(l => $"\t{l}\n").ToArray())}";
         }
     }
 
@@ -86,8 +89,8 @@ namespace ASP.NETCoreWebApplication
     {
         public int Id;
         public string Title;
-        public int Latitude;
-        public int Longitude;
+//        public int Latitude;
+//        public int Longitude;
         public string Address;
     }
 }
