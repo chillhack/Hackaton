@@ -12,14 +12,14 @@ class TopEventScreen extends Component {
     }
 
     componentWillMount() {
-        axios.get('./api/events')
+        axios.get('http://134.209.204.139:43301/api/events')
             .then(resp => this.setState({data: resp.data}))
     }
 
     render() {
         return (
-            <div className={'top-screen'}>
-                <EventCardBox events={this.state.data}/>
+            <div className={'top-screen'} style={{height:"650px"}}>
+                <EventCardBox events={this.state.data} style={{height:"620px"}}/>
             </div>
         );
     }

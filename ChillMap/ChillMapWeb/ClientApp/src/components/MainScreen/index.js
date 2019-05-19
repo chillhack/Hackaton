@@ -29,7 +29,7 @@ export default class MainScreen extends Component {
         return (
             <div className='main'>
                 {back}
-                <div className='row'>
+                <div className='row' style={{height:"680px"}}>
                     <div className='col-12'>
                         <div className={'screen'}>
                             {screens[this.state.activeScreen]}

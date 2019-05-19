@@ -7,6 +7,14 @@ namespace ChillMapWeb.Controllers
 {
     public class EventDTO
     {
+        public EventDTO(string name, string description, DateTime date, string path)
+        {
+            Name = name;
+            Description = description;
+            Date = date;
+            Path = path;
+        }
+
         [JsonProperty("name")]
         public string Name { get; }
 
@@ -15,12 +23,8 @@ namespace ChillMapWeb.Controllers
 
         [JsonProperty("date")]
         public DateTime Date { get; }
-
-        public EventDTO(string name, string description, DateTime date)
-        {
-            Name = name;
-            Description = description;
-            Date = date;
-        }
+        
+        [JsonProperty("path")]
+        public string Path { get; }
     }
 }
