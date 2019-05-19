@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './style.css';
 import NavButton from "../NavButton";
-import info from './src/info.svg'
 import home from './src/home.svg'
 import loc from './src/loc.svg'
 import serch from './src/serch.svg'
@@ -11,7 +10,7 @@ class NavPanel extends Component{
 
     constructor(props){
         super(props);
-        this.pic = [home, man,  serch, loc, info];
+        this.pic = [home, man,  serch, loc];
         this.state = {
             activeIndex: 0
         }
@@ -19,8 +18,8 @@ class NavPanel extends Component{
 
     render() {
         let navButtons = [];
-        for(let i = 0; i < 5; i++){
-            let className = (i === 0) ? 'col-2 offset-1' : 'col-2';
+        for(let i = 0; i < 4; i++){
+            let className = (i === 0) ? 'col-2 offset-2' : 'col-2';
             navButtons[i] =
                 <div key={i} className={className}>
                     <NavButton
