@@ -1,4 +1,5 @@
 using System;
+using Application.Entities;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,7 @@ namespace ChillMapWeb.Controllers
         }
 
         [HttpGet("district/{districtId}")]
-        public ActionResult<DistrictDTO> GetDistrict(string districtId) => Ok(Mapper.Map<DistrictDTO>(app.GetDistrict(new Guid(districtId))));
+        public ActionResult<DistrictDTO> GetDistrict(string districtId) => Ok(Mapper.Map<District, DistrictDTO>(app.GetDistrict(new Guid(districtId))));
 
         [HttpGet("place/{placeId}")]
         public ActionResult<PlaceDTO> GetPlace(string placeId) => Ok(Mapper.Map<PlaceDTO>(app.GetPlace(new Guid(placeId))));

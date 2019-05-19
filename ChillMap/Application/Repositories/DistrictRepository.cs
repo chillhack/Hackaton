@@ -22,7 +22,9 @@ namespace ChillMapWeb.Repositories
 
         public District GetById(Guid id)
         {
-            return districts.Find(district => district.Id == id).FirstOrDefault();
+            var d = districts.Find(district => district.Id == id).FirstOrDefault();
+
+            return d;
         }
 
         public void Remove(Guid id)

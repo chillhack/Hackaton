@@ -4,13 +4,13 @@ namespace ChillMapWeb.Controllers
 {
     public class PositionDTO
     {
-        public PositionDTO(string xPercents, string yPercents)
+        public PositionDTO(int x, int y)
         {
-            XPercents = xPercents;
-            YPercents = yPercents;
+            XPercents = x;
+            YPercents = y;
         }
 
-        [JsonProperty("x")] public string XPercents { get; }
-        [JsonProperty("y")] public string YPercents { get; }
+        [JsonProperty("x")] public int XPercents { get; }
+        [JsonProperty("y")] public int YPercents { get; }
     }
 }
