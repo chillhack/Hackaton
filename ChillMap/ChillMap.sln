@@ -4,8 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChillMapWeb", "ChillMapWeb\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{E81CA966-6FE4-429C-B432-DC1DB87A8964}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseInitializator", "DataBaseInitializator\DataBaseInitializator.csproj", "{5134B4E6-07B8-4902-B677-33FDAB856B72}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +18,5 @@ Global
 		{E81CA966-6FE4-429C-B432-DC1DB87A8964}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E81CA966-6FE4-429C-B432-DC1DB87A8964}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E81CA966-6FE4-429C-B432-DC1DB87A8964}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5134B4E6-07B8-4902-B677-33FDAB856B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5134B4E6-07B8-4902-B677-33FDAB856B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5134B4E6-07B8-4902-B677-33FDAB856B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5134B4E6-07B8-4902-B677-33FDAB856B72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

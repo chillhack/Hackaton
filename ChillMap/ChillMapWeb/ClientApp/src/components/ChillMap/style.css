@@ -1,4 +1,15 @@
-.map-box{
+.map-box1{
+    z-index: 1;
+    margin-top: -15px;
+    margin-left: 10px;
+    height: 500px;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center;
+}
+.map-box2{
+    position: absolute;
+    z-index: 1;
     margin-top: -15px;
     margin-left: 10px;
     height: 500px;
@@ -6,9 +17,12 @@
     background-position: center;
 }
 
+.m1{
+
+}
+
 .back{
     height: 100%;
-
 }
 
 .center-dist:active, .center-dist:hover, .center-dist:focus {

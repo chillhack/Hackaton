@@ -4,6 +4,7 @@ import events from './events';
 import EventCardBox from "../EventCardBox";
 import './style.css'
 import axios from 'axios'
+import f from './ff.json'
 
 class TopEventScreen extends Component {
     constructor(props) {
@@ -12,8 +13,9 @@ class TopEventScreen extends Component {
     }
 
     componentWillMount() {
-        axios.get('http://134.209.204.139:43301/api/events')
-            .then(resp => this.setState({data: resp.data}))
+        this.setState({data: f})
+        // axios.get('http://134.209.204.139:43301/api/events')
+        //     .then(resp => this.setState({data: resp.data}))
     }
 
     render() {

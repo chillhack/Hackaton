@@ -20,7 +20,7 @@ export default class MainScreen extends Component {
     }
 
     render() {
-        const screens = [<StartScreen/>, null, <TopEventScreen/>, <ChillMap/>, null];
+        const screens = [<StartScreen/>, <a href="https://youtu.be/c65lU_JJ_I4"> Mobile App</a>, <TopEventScreen/>, <ChillMap/>, null];
 
         let back =
             this.state.activeScreen === 0 ? <img alt='background' src={firstScreenBg} className='backgroundImage'/> :
