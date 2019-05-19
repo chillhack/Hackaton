@@ -32,6 +32,31 @@ namespace Application.API
 
         public Event GetEvent(Guid eventId)
         {
+//            districtRep.Create(new District(
+//                Guid.NewGuid(),
+//                new List<Place>()
+//                {
+//                    new Place()
+//                    {
+//                        Id = Guid.NewGuid(),
+//                        Name = "Yeltsin Center",
+//                        Description = "Cool place",
+//                        Address = "Yeltsina, 1",
+//                        Events = new List<Event>
+//                        {
+//                        },
+//                        Path = "C://User/photo.png",
+//                        PhoneNumber = "+79920183322",
+//                        Position = new Position()
+//                        {
+//                            X = 45,
+//                            Y = 23
+//                        }
+//                    }
+//                },
+//                "recovery"
+//            ));
+
             return eventRep.GetById(eventId);
         }
     }

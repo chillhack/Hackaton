@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using Application.Entities;
+using AutoMapper;
 using ChillMapWeb.Entities;
 using Newtonsoft.Json;
 
@@ -28,14 +30,14 @@ namespace ChillMapWeb.Controllers
         [JsonProperty("path")]
         public string Path { get; }
 
-        public PlaceDTO(string name, string description, string address, string phoneNumber, List<EventDTO> events, PositionDTO position, string path)
+        public PlaceDTO(string name, string description, string address, string phoneNumber, List<Event> events, Position position, string path)
         {
             Name = name;
             Description = description;
             Address = address;
             PhoneNumber = phoneNumber;
-            Events = events;
-            Position = position;
+            Events = events.Select(Mapper.Map<Event, EventDTO>).ToList();
+            Position = Mapper.Map<Position, PositionDTO>(position);
             Path = path;
         }
     }
